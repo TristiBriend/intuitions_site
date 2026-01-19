@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <!-- Fredoka Bold Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+    <!-- On lie le fichier CSS ici -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- PARTIE GAUCHE : LE MENU FIXE -->
+        <nav class="sidebar">
+            <ul class="menu">
+                <li><a href="#intro">Intuitions Studio</a></li>
+                <li><a href="#projet1">Our projects</a></li>
+                <li><a href="#projet2">Contact us</a></li>
+            </ul>
+        </nav>
+
+        <!-- PARTIE DROITE : LE CONTENU QUI DÉFILE -->
+        <main class="content">
+            
+            <section id="intro" class="section-big">
+                <h2>Intuitions Studio</h2>
+                <p>We believe education will be complemented by new formats. 
+                We build mobile applications that strengthen memorization, develop intuition, and prevent students from giving up.</p>
+            </section>
+
+            <section id="projet1" class="section-big">
+                <h2>Our projects</h2>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <div class="card-video-wrapper">
+                            <video autoplay muted loop playsinline>
+                                <source src="pytha-draw.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="card-overlay">
+                                <h3>Pytha Draw</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="card-video-wrapper">
+                            <video autoplay muted loop playsinline>
+                                <source src="pytha-app.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="card-overlay">
+                                <h3>Pytha.app</h3>
+                                <span class="badge">under development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projet2" class="section-big">
+                <!-- Cette section est maintenant disponible pour d'autres contenu -->
+            </section>
+
+            <section id="contact" class="section-big">
+                <h2>Contact</h2>
+                <p>tristan@pytha.app</p>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

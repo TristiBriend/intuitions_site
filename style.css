@@ -1,0 +1,182 @@
+/* =========================================
+   1. CONFIGURATION GLOBALE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory; /* L'effet aimant */
+    scrollbar-width: none; /* Cache scrollbar Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Cache scrollbar Chrome/Safari */
+}
+
+body {
+    /* Police similaire à la capture (Helvetica/Arial) */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. LE MENU FLOTTANT À GAUCHE
+   ========================================= */
+.sidebar {
+    position: fixed; /* Le menu flotte par-dessus tout */
+    left: 50px;      /* Décalé de 50px depuis la gauche */
+    top: 50%;        /* Placé à 50% de la hauteur */
+    transform: translateY(-50%); /* Astuce pour le centrer parfaitement verticalement */
+    z-index: 100;    /* S'assure qu'il est toujours au-dessus du texte */
+    text-align: left; /* Aligne le texte des liens à gauche */
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    margin-bottom: 15px; /* Espace entre les liens */
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d1d1d1; /* GRIS CLAIR (par défaut comme sur la photo) */
+    transition: color 0.3s ease; /* Transition douce pour la couleur */
+}
+
+/* Quand on passe la souris dessus */
+.menu a:hover {
+    color: #000; /* Devient NOIR */
+}
+
+/* Style pour le lien "Actif" (celui sur lequel on est) */
+.menu a.active {
+    color: #000;
+    font-weight: bold;
+}
+
+/* =========================================
+   3. LE CONTENU CENTRÉ
+   ========================================= */
+.content {
+    width: 100%;
+}
+
+.section-big {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start; /* L'aimant */
+    
+    /* Centrage parfait du contenu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centre horizontalement */
+    text-align: center;  /* Centre le texte */
+    
+    /* Marge pour ne pas que le texte touche les bords */
+    padding: 0 20px; 
+    max-width: 900px; /* Largeur max pour que ce soit lisible */
+    margin: 0 auto;   /* Centre le bloc dans la page */
+}
+
+/* Typographie du contenu */
+.section-big h2 {
+    font-size: 2.5rem; /* Gros titre */
+    margin-bottom: 30px;
+    line-height: 1.3;
+    font-weight: 400;
+}
+
+.section-big p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.placeholder-img {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+/* =========================================
+   4. PROJECT CARDS
+   ========================================= */
+.projects-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.project-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.card-video-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    aspect-ratio: 1 / 1;
+    background-color: #f0f0f0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.card-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.card-overlay h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: white;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.card-overlay .badge {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.9rem;
+    color: #ddd;
+    font-weight: 400;
+    display: block;
+    margin-top: 10px;
+}

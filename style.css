@@ -749,7 +749,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     background: #fff;
-    border: 1px solid #eee;
+    border: 1px solid #e9e9e9;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
@@ -762,6 +762,7 @@ body {
     padding: 16px 18px;
     text-align: center;
     font-size: 1rem;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .concept-table th:first-child,
@@ -785,9 +786,10 @@ body {
 }
 
 .concept-table thead th {
-    background: #f7f7f7;
+    background: #fafafa;
     font-weight: 700;
     font-size: 0.95rem;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .level-legend {
@@ -803,11 +805,11 @@ body {
 }
 
 .level-legend.level-2 {
-    color: #10b981;
+    color: #ef4444;
 }
 
 .level-legend.level-3 {
-    color: #f59e0b;
+    color: #ec4899;
 }
 
 
@@ -1028,11 +1030,11 @@ body {
 }
 
 .concept-table td:nth-child(3) .checkmark {
-    color: #10b981;
+    color: #ef4444;
 }
 
 .concept-table td:nth-child(4) .checkmark {
-    color: #f59e0b;
+    color: #ec4899;
 }
 
 

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the League - Pytha Draw</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #FAFAFA;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 90%;
+            width: 320px;
+            position: relative;
+        }
+        
+        /* STYLE MIS A JOUR POUR L'ICONE APP */
+        .logo {
+            width: 100px; /* Taille ideale pour une icone */
+            height: auto;
+            border-radius: 22px; /* Arrondi style iOS */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Legere ombre */
+            display: block;
+            margin: 0 auto 25px auto;
+        }
+
+        h1 { 
+            font-size: 22px; 
+            margin-bottom: 30px; 
+            margin-top: 0; 
+            line-height: 1.3;
+        }
+        
+        .btn {
+            background-color: #fff; 
+            color: #000;
+            padding: 15px 24px;
+            text-decoration: none;
+            border-radius: 999px;
+            font-weight: 400;
+            display: block;
+            font-size: 18px;
+            margin-bottom: 15px;
+            transition: transform 0.1s ease, background-color 0.2s ease, color 0.2s ease;
+            border: 2px solid #000;
+        }
+        .btn:hover {
+            background-color: #000;
+            color: #fff;
+        }
+        .btn:active { transform: scale(0.98); }
+
+        .separator {
+            font-size: 14px;
+            color: #AAA;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .small-link { 
+            font-size: 14px; 
+            color: #999; 
+            text-decoration: underline; 
+        }
+
+        .support-home {
+            position: absolute;
+            top: -40px;
+            left: -56px;
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .support-home img {
+            width: 36px;
+            height: 36px;
+            display: block;
+            border: 1.5px solid #1800ad;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="../index.html" class="support-home" aria-label="Back to home">
+            <img src="../images/IntuitionsStudioFavicon.svg" alt="Intuitions Studio">
+        </a>
+        <img src="../images/AppIcon.png" alt="Pytha Draw Icon" class="logo">
+        
+        <h1 id="leagueTitle">Join a league on Pytha Draw!</h1>
+        
+        <a id="appLink" href="#" class="btn">Join</a>
+        
+        <div class="separator">Or</div>
+
+        <a id="storeLink" href="#" class="small-link">Download Pytha Draw on the Apple Store</a>
+    </div>
+
+    <script type="text/javascript">
+        // 1. Recuperation des parametres
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+        const leagueName = params.get('name');
+
+        const appStoreId = "6755034099"; 
+
+        // 2. Titre Dynamique
+        const titleElement = document.getElementById("leagueTitle");
+        
+        if (leagueName) {
+            const cleanName = decodeURIComponent(leagueName).replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            titleElement.innerText = "Join league " + cleanName + " on Pytha Draw";
+        } else {
+            titleElement.innerText = "Join a league on Pytha Draw!";
+        }
+
+        // 3. Logique de Redirection
+        if (!code) {
+            window.location.href = "https://www.pytha.app/";
+        } else {
+            const appDeepLink = "pythadraw://join?code=" + code;
+            const appStoreLink = "https://apps.apple.com/app/id" + appStoreId;
+
+            document.getElementById("appLink").href = appDeepLink;
+            document.getElementById("storeLink").href = appStoreLink;
+
+            window.location.href = appDeepLink;
+
+            setTimeout(function() {
+                window.location.href = appStoreLink;
+            }, 5500);
+        }
+    </script>
+</body>
+</html>

@@ -31,9 +31,9 @@
         <!-- PARTIE GAUCHE : LE MENU FIXE -->
         <nav class="sidebar">
             <ul class="menu">
-                <li><a href="#intro">Intuitions Studio</a></li>
-                <li><a href="#projet1-page1">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#intro" data-hash="intuitions-studio">Intuitions Studio</a></li>
+                <li><a href="#projet1-page1" data-hash="portfolio">Portfolio</a></li>
+                <li><a href="#contact" data-hash="contact">Contact</a></li>
             </ul>
             <div class="lang-switch">
                 <a href="index.html" class="lang-link">EN</a>
@@ -52,7 +52,7 @@
                         <span class="intro-rotator-word" data-text="STUDIO">STUDIO</span>
                     </div>
                 </div>
-                <p>Qui a dit que l’apprentissage ne pouvait pas être fun ?<br>Nous construisons la nouvelle génération d’applications d’apprentissage mobile.</p>
+                <p>Qui a dit qu'apprendre ne pouvait pas être amusant ?<br>Nous construisons une nouvelle génération d’applications mobile éducatives.</p>
                 <div class="scroll-hint">Faites défiler pour découvrir nos apps</div>
             </section>
 
@@ -303,12 +303,21 @@
                 }
 
                 links.forEach((link) => link.classList.remove("active", "section-blue", "section-red", "section-black"));
+                let activeLink = null;
                 if (current.id === "intro" && linkIntro) {
                     linkIntro.classList.add("active", "section-blue");
+                    activeLink = linkIntro;
                 } else if (current.id === "contact" && linkContact) {
                     linkContact.classList.add("active", "section-black");
+                    activeLink = linkContact;
                 } else if (linkPortfolio) {
                     linkPortfolio.classList.add("active", "section-red");
+                    activeLink = linkPortfolio;
+                }
+
+                const hash = activeLink && activeLink.dataset.hash;
+                if (hash) {
+                    history.replaceState(null, "", `#${hash}`);
                 }
             };
 

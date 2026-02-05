@@ -1012,6 +1012,110 @@ body {
     color: #999;
 }
 
+@media (max-width: 900px) {
+    .sidebar {
+        position: static;
+        transform: none;
+        padding: 20px 20px 0;
+    }
+
+    .menu {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .menu li {
+        margin-bottom: 0;
+    }
+
+    .section-big {
+        padding: 80px 20px 40px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .intro-logo {
+        width: 280px;
+    }
+
+    .intro-rotator {
+        margin-top: -40px;
+    }
+
+    .content-row,
+    .content-row.reverse {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .content-text {
+        text-align: center;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .carousel-app-icon {
+        width: 140px;
+        height: 140px;
+    }
+
+    .contact-actions .play-button {
+        min-width: 220px;
+    }
+
+    .footer-brand {
+        position: static;
+        margin-top: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .intro-logo {
+        width: 220px;
+    }
+
+    .intro-rotator {
+        font-size: 28px;
+        margin-top: -20px;
+    }
+
+    .project-description {
+        font-size: 1.6rem;
+    }
+
+    .content-image {
+        width: 200px;
+    }
+
+    .contact-actions {
+        gap: 10px;
+    }
+
+    .contact-actions .play-button {
+        min-width: 200px;
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .menu a {
+        font-size: 0.95rem;
+    }
+
+    .intro-rotator {
+        font-size: 24px;
+    }
+
+    .table-wrap {
+        padding: 12px;
+    }
+}
+
 .checkmark {
     display: inline-flex;
     align-items: center;
